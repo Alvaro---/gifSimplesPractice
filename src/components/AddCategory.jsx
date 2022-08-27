@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 // export const AddCategory = ({ setCategories }) => {
 export const AddCategory = ({ onAddCategory }) => {
@@ -19,6 +20,7 @@ export const AddCategory = ({ onAddCategory }) => {
   //   };
 
   const onSubmit = (e) => {
+    // console.log("Hola mundo para el test");
     e.preventDefault();
     // console.log(e);
     if (inputValue.trim().length <= 1) return; // Si es menor que uno se sale de la funcion
@@ -28,7 +30,7 @@ export const AddCategory = ({ onAddCategory }) => {
 
   return (
     // <form onSubmit={(event) => onSubmit(event)}> //Si el mismo argumento se envia, puede quitarse.
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form">
       <input
         type="text"
         placeholder="Buscar Gifs"
@@ -45,4 +47,8 @@ export const AddCategory = ({ onAddCategory }) => {
       />
     </form>
   );
+};
+
+AddCategory.propTypes = {
+  onAddCategory: PropTypes.func.isRequired,
 };

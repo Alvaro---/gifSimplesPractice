@@ -1,4 +1,5 @@
 // api.giphy.com/v1/gifs/search?api_key=ipAQldA03CsZ7rXyTEXB8fjzytqNQgcT&q=valoran
+import PropTypes from "prop-types";
 import { useFetchGifts } from "../hooks/useFetchGifts";
 import { GiftGridItem } from "./GiftGridItem";
 
@@ -41,4 +42,8 @@ export const GiftGrid = ({ category }) => {
       </div>
     </>
   );
+};
+
+GiftGrid.propTypes = {
+  category: PropTypes.string.isRequired,
 };
